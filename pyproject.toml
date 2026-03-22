@@ -1,0 +1,30 @@
+[project]
+name = "chester"
+version = "0.1.0"
+description = "Chester the ingester"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "edgartools>=5.25.1",
+    "pytest>=9.0.2",
+    "temporalio>=1.7.1",
+]
+
+[project.scripts]
+chester-worker = "chester.run_worker:run"
+chester-workflows = "chester.run_workflows:run"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "pytest-asyncio>=1.3.0",
+]
