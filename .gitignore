@@ -8,7 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
-.env
 
 tmp
 .pytest_cache
