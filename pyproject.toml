@@ -13,6 +13,8 @@ dependencies = [
 [project.scripts]
 chester-worker = "chester.run_worker:run"
 chester-workflows = "chester.run_workflows:run"
+chester-compose-up = "chester.compose:docker_compose_up"
+chester-compose-down = "chester.compose:docker_compose_down"
 
 [build-system]
 requires = ["setuptools>=61.0"]
