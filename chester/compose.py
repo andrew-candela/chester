@@ -30,6 +30,7 @@ def docker_compose_down():
             "-f",
             "compose/docker-compose-postgres.yml",
             "down",
+            "-v",
         ],
         check=True,
     )
