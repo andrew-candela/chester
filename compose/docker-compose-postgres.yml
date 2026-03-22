@@ -83,20 +83,6 @@ services:
     entrypoint: ["/bin/sh"]
     command: /scripts/create-namespace.sh
 
-  redis:
-    image: redis:8.6.1-trixie
-    container_name: temporal-redis
-    ports:
-      - "6380:6380"
-    networks:
-      - temporal-network
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 3s
-      retries: 10
-      start_period: 10s
-
   temporal-ui:
     container_name: temporal-ui
     depends_on:
